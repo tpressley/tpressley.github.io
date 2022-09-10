@@ -1,0 +1,9 @@
+<div *ngIf="merchItem">
+  <h3>{{merchItem.name}}</h3>
+  <p>{{merchItem.price | currency}}</p>
+  <div *ngIf="merchItem.imgPaths && merchItem.imgPaths.length > 0">
+    <ul *ngFor="let imgPath of merchItem.imgPaths">
+      <img class='merch-img' src="{{imgPath}}"/>
+    </ul>
+  </div>
+</div>

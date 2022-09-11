@@ -3,4 +3,5 @@ export interface MerchItem {
     imgPaths?: string[];
     price?: number;
     name: string;
+    description: string;
   }

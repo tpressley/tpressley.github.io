@@ -1,4 +1,7 @@
 <!-- TODO: Display merch items -->
-<ul *ngFor="let merchItem of merchItems">
-    <app-merch-item [merchItem]="merchItem"></app-merch-item>
-</ul>
+<div class="merch-page">
+  <a [routerLink]="['/merch/admin']"> Merchandise Admin Login </a>
+  <ul *ngFor="let merchItem of merchItems">
+      <app-merch-item [merchItem]="merchItem"></app-merch-item>
+  </ul>
+</div>

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { MerchItemService } from '../merch-item.service';
+import { MerchItemService } from '../services/merch-item.service';
 import { MerchItem } from '../models/merch-item';
-import { MIs } from '../merch-items';
+import { MerchItemComponent } from '../merch-item/merch-item.component';
 
 @Component({
   selector: 'app-merchandise',
@@ -10,10 +10,10 @@ import { MIs } from '../merch-items';
 })
 export class MerchandiseComponent implements OnInit {
 
-  merchItems: MerchItem[] = MIs;
+  merchItems: MerchItem[] = [];
   constructor(private merchService: MerchItemService) { }
 
   ngOnInit(): void {
+    this.merchService.getMerchItems().subscribe(merchItems => this.merchItems = merchItems);
   }
-  //TODO: Get merch item data from merch item service
 }
